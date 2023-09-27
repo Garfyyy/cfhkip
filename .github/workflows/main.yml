@@ -35,7 +35,7 @@ jobs:
       run: pip install -r ./requirements.txt
       
     - name: Run script
-      run: python main.py --baseapi $BASE_API --query $QUERY --testurl $TESTURL
+      run: python main.py --baseapi "$BASE_API" --query "$QUERY" --testurl "$TESTURL"
     
     - name: remove old data
       run: rm -rf ./ips.txt

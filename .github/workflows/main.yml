@@ -48,5 +48,5 @@ jobs:
         git config --local user.name 'Garfyyy'
         git config --local user.email 'garfy@stu.gxnu.edu.cn'
         git add .
-        git diff --quiet || git commit -m "Update results"
+        git diff --exit-code && git commit -m "update result"
         git push origin main

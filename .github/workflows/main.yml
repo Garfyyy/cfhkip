@@ -1,10 +1,10 @@
 name: cfhkip
 
-# on:
-#   schedule:
-#     - cron: '00 2 * * *'
+on:
+  schedule:
+    - cron: '00 17 * * *'
 
-on: [push]
+# on: [push]
 
 env:
   BASE_API: ${{ secrets.BASE_API }}
@@ -17,10 +17,13 @@ permissions:
   contents: write
       
 jobs:
-  update_data:
+  get_IPs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Wait random time
+      run: sleep $((RANDOM % 3600))
+      
     - run: echo "Start getting IPs"
         
     - name: Check my code

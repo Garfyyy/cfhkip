@@ -46,7 +46,7 @@ def get_ip(base_api_url, query):
 
 def run_speedtest(testurl):
 
-    cmd = ["./CloudflareST", "-url", testurl, "-f", "./ips.txt", "-httping", "-dd"， "-o", "result.csv"]
+    cmd = ["./CloudflareST", "-url", testurl, "-f", "./ips.txt", "-httping", "-dd", "-o", "result.csv"]
     try:
         result = subprocess.run(
             cmd, 

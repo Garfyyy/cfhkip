@@ -6,6 +6,13 @@ name: cfhkip
 
 on: [push]
 
+env:
+  BASE_API: ${{ secrets.BASE_API }}
+  EMAIL: ${{ secrets.EMAIL }}
+  KEY: ${{ secrets.KEY }}
+  QUERY: ${{ secrets.QUERY }}
+  TESTURL: ${{ secrets.TESTURL }}
+
 permissions:
   contents: write
       
@@ -26,14 +33,6 @@ jobs:
 
     - name: Install dependencies
       run: pip install -r ./requirements.txt
-
-    - name: Setting an environment variable
-      env:
-        BASE_API: ${{ secrets.BASE_API }}
-        EMAIL: ${{ secrets.EMAIL }}
-        KEY: ${{ secrets.KEY }}
-        QUERY: ${{ secrets.QUERY }}
-        TESTURL: ${{ secrets.TESTURL }}
       
     - name: Run script
       run: python main.py --baseapi $BASE_API --query $QUERY --testurl $TESTURL
